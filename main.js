@@ -16,7 +16,7 @@ const blockedIPs = JSON.parse(fs.readFileSync('./blockedIP.json', {
 }));
 const handleBlockIP = rateLimit({
   windowMs: 60 * 1000,
-  max: 50,
+  max: 500,
   handler: function (req, res, next) {
     const ipInfo = getIP(req);
     const ip = ipInfo.clientIp;
@@ -42,7 +42,7 @@ app.use(handleBlockIP);
 
 const limiter = rateLimit({
   windowMs: 60 * 1000,
-  max: 50,
+  max: 500,
   // limit each IP to max requests per windowMs
   message: {
     error: "Bạn đã đặt giới hạn lượt yêu cầu 50 lượt yêu cầu mỗi phút"
