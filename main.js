@@ -98,7 +98,7 @@ app.use((error, req, res, next) => {
 ///////////////////////////////////////////////////////////
 //========= Create website for dashboard/uptime =========//
 ///////////////////////////////////////////////////////////
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (process.env.PORT || 19099));
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 
