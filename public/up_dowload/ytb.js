@@ -3,8 +3,7 @@ const qs = require('querystring');
 
 exports.name = '/youtube/download';
 exports.index = async (req, res, next) => {
-  if (require('../API_KEY/data/check_api_key.js').check_api_key(req, res))
-    return;
+
   let id = req.query.id;
   id = id.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
   id = id[2] !== undefined ? id[2].split(/[^0-9a-z_\-]/i)[0] : id[0];
