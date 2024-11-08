@@ -1,6 +1,5 @@
 exports.name = '/fbdownload';
 exports.index = async(req, res, next) => {
-  if (require('../API_KEY/data/check_api_key.js').check_api_key(req, res)) return;
     function isUrlValid(link) {
         var res = link.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
         if (res == null)
